@@ -13,6 +13,10 @@ function Navbar(){
             
         <i>XX</i>
         
+        <div>
+        <p>Movies</p>
+        
+        </div>
     </nav>
     
     )

@@ -8,13 +8,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 40px;
+    padding: 0px 50px;
     z-index: 5;
 /*    opacity: 0.5;*/
     color: #fff;
 }
 
-.navbar>i{
+.navbar>i,
+.navbar p{
     cursor: pointer;
     
 }
+
+/*
+.navbar>div{
+    width:50%;
+    display: flex;
+    justify-content: flex-start;
+}
+*/

@@ -30,14 +30,12 @@ export default function Home() {
       
         <section className={styles.recentContainer}>
             <div className={styles.recentHeader}>
-                <h1>All Movies</h1>
+                <h1>Some Movies</h1>
             </div>
             
              <MovieCardContainer />
             
-            <div className={styles.buttonContainer}>
-                <button>Load More</button>
-            </div>
+            
              
         </section>
       </section>
@@ -45,3 +43,7 @@ export default function Home() {
     </section>
   )
 }
+
+//<div className={styles.buttonContainer}>
+//                <button>Load More</button>
+//            </div>
