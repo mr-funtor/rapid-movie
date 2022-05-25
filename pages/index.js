@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image';
 import styles from '../styles/Home.module.css'
 import tempBlood from '../assets/images/blood.jpg'
-
+import MovieCardContainer from '../components/MovieCardContainer'
 
 
 export default function Home() {
@@ -33,9 +33,12 @@ export default function Home() {
                 <h1>All Movies</h1>
             </div>
             
-            <div className={styles.cardsContainer}>
-      
+             <MovieCardContainer />
+            
+            <div className={styles.buttonContainer}>
+                <button>Load More</button>
             </div>
+             
         </section>
       </section>
           
