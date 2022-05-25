@@ -1,0 +1,65 @@
+.pageContainer{
+    
+    background: #000;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.pageContainer>section,
+#pageSection{
+    padding-top: 15vh;
+/*    background: pink;*/
+    width:55%;
+    min-height: 100vh;
+    margin: 0 auto;
+    
+}
+
+#pageSection{
+    width:65%;
+/*    background: blue;*/
+}
+
+
+
+.pageContainer>section>h1{
+    
+    font-size: 50px;
+    text-align: center;
+}
+
+
+.reviewsContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonContainer>button{
+    background: teal;
+    width: 200px;
+    height: 58px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.buttonContainer>button:hover{
+    background-color:darkturquoise;
+/*    transform: scale(1.03);*/
+}

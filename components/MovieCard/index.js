@@ -10,7 +10,7 @@ function recentCards(){
     
     //This takes the user to the page/route for the single movie
     const switchToSingleMovie=(e)=>{
-        router.push("/explore-movies/one-movie")
+        router.push("/all-movies/one-movie")
     }
     
     

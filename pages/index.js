@@ -44,6 +44,4 @@ export default function Home() {
   )
 }
 
-//<div className={styles.buttonContainer}>
-//                <button>Load More</button>
-//            </div>
+
