@@ -11,10 +11,10 @@ function allMoviesPage(){
                 <h1>All Movies</h1>
                 
                 <MovieCardContainer />
-                
-        <div className={styles.buttonContainer}>
-                <button>Load More</button>
-            </div>
+
+                <div className={styles.buttonContainer}>
+                    <button>Load More</button>
+                </div>
         
             </section>
         
