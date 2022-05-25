@@ -24,13 +24,21 @@ export default function Home() {
                     <p>IMDB</p>
                 </div>
             </div>
-
-      
-        
       </section>
+          
+    <section className={styles.secondSection}>
       
-
+        <section className={styles.recentContainer}>
+            <div className={styles.recentHeader}>
+                <h1>All Movies</h1>
+            </div>
+            
+            <div className={styles.cardsContainer}>
       
+            </div>
+        </section>
+      </section>
+          
     </section>
   )
 }
