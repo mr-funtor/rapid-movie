@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse
+} from "@fortawesome/free-solid-svg-icons";
 
 function Navbar(){
     
@@ -8,7 +11,10 @@ function Navbar(){
     <nav className={styles.navbar}>
         
             <Link href="/">
-                <i>OO</i>
+                <i>
+                    <FontAwesomeIcon
+        icon={faHouse}/>
+                </i>
             </Link>
             
         <i>XX</i>

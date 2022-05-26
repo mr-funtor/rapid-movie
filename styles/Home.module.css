@@ -32,7 +32,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    cursor: pointer;
 }
 
 .coverTop>h1{
@@ -50,15 +49,50 @@
     margin-top: 10px;
 }
 
-.coverTop i{
-    font-size: 45px;
+.coverTopMid>i{
+    display: flex;
+    font-size: 32px;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.active{
     color:yellow;
 }
 
 .coverTop p{
     font-size: 22px;
     color: #fff;
+    margin-right: 15px;
 }
+
+.coverTop>button{
+    background: rgba(81, 169, 207,0.7);
+    width: 180px;
+    height: 56px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 30px;
+}
+
+.coverTop>button:hover{
+    background: rgba(81, 169, 207,1);
+}
+
+.coverTop>button>i{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
 
 /*SECOND SECTION*/
 

@@ -8,6 +8,11 @@
     overflow: hidden;
     margin-bottom: 50px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.singleCard:hover{
+    transform: scale(1.02);
 }
 
 .imageContainer{

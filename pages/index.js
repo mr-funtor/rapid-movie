@@ -1,22 +1,26 @@
 import Head from 'next/head'
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import {useRouter} from 'next/router';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faStar,
+    faCaretRight
+} from "@fortawesome/free-solid-svg-icons";
 import tempBlood from '../assets/images/blood.jpg'
 import MovieCardContainer from '../components/MovieCardContainer';
+import Loader from '../components/LoadingModal';
 import useSWR from 'swr'
 
 export default function Home() {
     const [url, setUrl]=useState('/api/movies/all?movie=cat&page=1')
-    
     const router=useRouter();
-//    const [url, setUrl]=useState('/api/movies/single?movie=cat&page=1')
     const { data, error } = useSWR(`/api/movie/tt4154796`);
     
-    if(!data)return
+    if(!data)return <Loader />
     
-    const {Poster, Title, Plot,imdbID}=data;
+    const {Poster, Title, Plot,imdbID,imdbRating}=data;
     
     const switchToSingleMovie=(e)=>{
         router.push(`/all-movies/${imdbID}`)
@@ -30,14 +34,27 @@ export default function Home() {
         <Image className={styles.theImage}   src={Poster} alt="a picture for the movie" layout="fill"/>
       </div>
       
-      <section onClick={()=>switchToSingleMovie()} className={styles.heroCover}>
+      <section  className={styles.heroCover}>
             <div className={styles.coverTop}>
                 <h1>{Title.toUpperCase()}</h1>
-                <div>
-                    <i>*****</i>
-                    <p><span>7.4</span>/10</p>
+                <div className={styles.coverTopMid}>
+                    <i>
+                    
+                            <FontAwesomeIcon className={`${imdbRating/2>=1 ? styles.active : ''}`} icon={faStar}/>
+                            <FontAwesomeIcon className={`${imdbRating/2>=2 ? styles.active : ''}`} icon={faStar}/>
+                            <FontAwesomeIcon className={`${imdbRating/2>=3 ? styles.active : ''}`} icon={faStar}/>
+                            <FontAwesomeIcon className={`${imdbRating/2>=4 ? styles.active : ''}`} icon={faStar}/>
+                            <FontAwesomeIcon className={`${imdbRating/2>=5 ? styles.active : ''}`} icon={faStar}/>
+                
+                    </i>
+                    <p><span>{imdbRating}</span>/10</p>
                     <p>IMDB</p>
                 </div>
+
+                <button onClick={()=>switchToSingleMovie()}>View Details <i>
+            <FontAwesomeIcon icon={faCaretRight} />
+      </i></button>
+
             </div>
       </section>
           

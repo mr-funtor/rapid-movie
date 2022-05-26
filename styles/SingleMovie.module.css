@@ -27,11 +27,6 @@
     align-items:flex-end;
 }
 
-.heroCover>h1{
-    font-size: 100px;
-    color:yellow;
-}
-
 .movieBody{
     background: #000;
     min-height: 55vh;
@@ -44,6 +39,26 @@
     margin-bottom: 20px;
 }
 
+.movieBodyTop>div{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+
+.movieBodyTop>div>i{
+    display: flex;
+/*    color:yellow;*/
+    margin-right: 15px;
+}
+
+.active{
+    color: yellow;
+}
+
+.movieBodyTop>div>p{
+    margin-right: 15px;
+}
+
 .actionArea{
     width:75%;
     display: flex;
@@ -52,51 +67,6 @@
     
 }
 
-.actionArea>a{
-    text-decoration: none;
-}
-
-
-.actionArea>a>button{
-    background: red;
-    width: 180px;
-    height: 48px;
-    border: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.actionArea>a>button:hover{
-    background-color: crimson;
-}
-
-.actionArea>b{
-    cursor: pointer;
-}
-
-.actionArea>i{
-    background: rgba(222,222,222,0.35);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.actionArea>i:hover{
-    background: rgba(222,222,222,0.6);
-}
 
 .synopsis{
     margin: 50px 0;
@@ -108,15 +78,7 @@
     margin-bottom: 10px;
 }
 
-.reviewContainer{
-    min-height: 50vh;
-}
 
-.reviewContainer>div{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between
-}
 
 @media(max-width:780px){
     .movieBody{

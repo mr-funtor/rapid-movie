@@ -24,9 +24,10 @@ function MovieCard({Title,Year, Poster,imdbID}){
             <div className={styles.overlay}>
                 <footer className={styles.overlayFooter}>
                     <p data-type="see">{Title}</p>
+                    
+                    <button >View Details</button>
                     <div>
-                        
-                        <p>{Year}</p>
+                       
                     </div>
                 </footer>
             </div>

@@ -1,20 +1,25 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import {useRouter} from 'next/router';
 import Image from 'next/image';
 import tempBlood from '../../assets/images/blood.jpg';
 import styles from '../../styles/SingleMovie.module.css';
-import useSWR from 'swr'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faStar
+} from "@fortawesome/free-solid-svg-icons";
+import useSWR from 'swr';
+import Loader from '../../components/LoadingModal'
 
 function Movie(){
     const router=useRouter();
     const movieCode= router.query.singleMovie;
-//    const [url, setUrl]=useState('/api/movies/single?movie=cat&page=1')
     const { data, error } = useSWR(`/api/movie/${movieCode}`);
     
-    if(!data)return
+    
+    if(!data)return <Loader />
         
-    const {Poster, Title, Plot}=data;
-   
+    const {Poster, Title, Plot, Year,imdbRating}=data;
+ 
     
     return(
         <main>
@@ -24,7 +29,7 @@ function Movie(){
               </div>
         
                  <section className={styles.heroCover}>
-                    <h1>* * * * </h1>
+                    
                 </section>
         
         
@@ -33,7 +38,19 @@ function Movie(){
             <section className={styles.movieBody}>
                 <div className={styles.movieBodyTop}>
                     <h1>{Title.toUpperCase()}</h1>
-        
+                    <div>
+                        <i>
+                            <FontAwesomeIcon className={`${imdbRating/2>=1 ? styles.active : ''}`} icon={faStar}/>
+                            <FontAwesomeIcon className={`${imdbRating/2>=2 ? styles.active : ''}`} icon={faStar}/>
+                            <FontAwesomeIcon className={`${imdbRating/2>=3 ? styles.active : ''}`} icon={faStar}/>
+                            <FontAwesomeIcon className={`${imdbRating/2>=4 ? styles.active : ''}`} icon={faStar}/>
+                            <FontAwesomeIcon className={`${imdbRating/2>=5 ? styles.active : ''}`} icon={faStar}/>
+                            
+                        </i>
+                        
+                        <p>{imdbRating}/10</p>
+                        <p>{Year}</p>
+                    </div>
                     
                     <section className={styles.synopsis}>
                         <h1>Synopsis</h1>
@@ -51,17 +68,3 @@ function Movie(){
 
 export default Movie;
 
-export async function getServerSideProps(context){
-    const {params, query}= context;
-    const {singleMovie}=params;
-//    const response= await fetch(
-//    `http://localhost:4000/news?category=${category}`
-//    )
-//    const data= await response.json();
-    
-    return{
-        props:{
-            
-        }
-    }
-}

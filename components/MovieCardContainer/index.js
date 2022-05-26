@@ -2,12 +2,12 @@ import Link from 'next/link';
 import styles from './MovieCardContainer.module.css';
 import MovieCard from '../MovieCard';
 import useSWR from 'swr'
-
+import Loader from '../LoadingModal';
 
 function MovieCardContainer({url}){
     const { data, error } = useSWR(url);
     
-    if(!data)return
+    if(!data)return <Loader />
     
     const {Search}=data || [];
 //    console.log(Search[0].Poster)
