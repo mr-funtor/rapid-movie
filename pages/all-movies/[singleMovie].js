@@ -1,17 +1,26 @@
+import {useState} from 'react'
 import {useRouter} from 'next/router';
 import Image from 'next/image';
 import tempBlood from '../../assets/images/blood.jpg';
 import styles from '../../styles/SingleMovie.module.css';
+import useSWR from 'swr'
 
 function Movie(){
     const router=useRouter();
-    const singleMovie= router.query.singleMovie;
+    const movieCode= router.query.singleMovie;
+//    const [url, setUrl]=useState('/api/movies/single?movie=cat&page=1')
+    const { data, error } = useSWR(`/api/movie/${movieCode}`);
+    
+    if(!data)return
+        
+    const {Poster, Title, Plot}=data;
+   
     
     return(
         <main>
             <section className={styles.topSection}>
                 <div className={styles.imageContainer}>
-                 <Image className={styles.theImage} placeholder="blur"  src={tempBlood} alt="a picture for the movie" layout="fill"/>
+                 <Image className={styles.theImage}  src={Poster} alt="a picture for the movie" layout="fill"/>
               </div>
         
                  <section className={styles.heroCover}>
@@ -23,14 +32,13 @@ function Movie(){
             
             <section className={styles.movieBody}>
                 <div className={styles.movieBodyTop}>
-                    <h1>WEDDING PARTY</h1>
+                    <h1>{Title.toUpperCase()}</h1>
         
                     
                     <section className={styles.synopsis}>
                         <h1>Synopsis</h1>
                     
-                        <p>jldjljsl ljdljls ljsljd
-                        shhd ndiid sdksoj sjdkh shkdhsk shkdh sihksos skdkhs sndkhis dhshsa skhd skdhks shdid shdhiosn sikhdo</p>
+                        <p>{Plot}</p>
                     </section>
                    
                 </div>

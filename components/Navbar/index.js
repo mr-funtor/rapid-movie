@@ -14,8 +14,9 @@ function Navbar(){
         <i>XX</i>
         
         <div>
-        <p>Movies</p>
-        
+            <Link href="/all-movies">
+                <p>Movies</p>
+            </Link>
         </div>
     </nav>
     

@@ -5,28 +5,28 @@ import Link from 'next/link';
 //import {useRef} from 'react';
 import {useRouter} from 'next/router';
 
-function recentCards(){
+function MovieCard({Title,Year, Poster,imdbID}){
     const router =useRouter()
     
     //This takes the user to the page/route for the single movie
     const switchToSingleMovie=(e)=>{
-        router.push("/all-movies/one-movie")
+        router.push(`/all-movies/${imdbID}`)
     }
     
     
     return(
         <article  className={styles.singleCard} onClick={(e)=>switchToSingleMovie(e)}>
             <div className={styles.imageContainer}>
-                <Image className={styles.theImage} src={heroPic}
+                <Image className={styles.theImage} src={Poster}
         alt="a picture for the movie" layout="fill"/>
             </div>
        
             <div className={styles.overlay}>
                 <footer className={styles.overlayFooter}>
-                    <p data-type="see">October 1</p>
+                    <p data-type="see">{Title}</p>
                     <div>
-                        <i>****</i>
-                        <p>4.5</p>
+                        
+                        <p>{Year}</p>
                     </div>
                 </footer>
             </div>
@@ -34,4 +34,4 @@ function recentCards(){
     )
 }
 
-export default recentCards;
+export default MovieCard;

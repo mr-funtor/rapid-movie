@@ -1,0 +1,21 @@
+
+export default async function handler(req, res) {
+    const {params,query}=req;
+    const {movie,page}=query;
+//    console.log('seen')
+    const url = `https://movie-database-alternative.p.rapidapi.com/?s=${movie}&r=json&type=movie&page=${page}`;
+
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com',
+    'X-RapidAPI-Key': process.env.RAPIDAPI_KEY
+  }
+};
+    
+    
+    const response = await fetch(url,options);
+    const data= await response.json();
+    
+  res.status(200).json(data)
+}
