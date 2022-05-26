@@ -1,9 +1,8 @@
 
 export default async function handler(req, res) {
     const {params,query}=req;
-//    const {movie,page}=query;
     const {oneMovie}=query;
-//    console.log('seen')
+
     const url = `https://movie-database-alternative.p.rapidapi.com/?r=json&i=${oneMovie}`;
 
 const options = {

@@ -15,12 +15,14 @@ function Navbar(){
         setText(e.target.value)
     }
     
+    //activates the search when the user presses the "enter" key
     const triggerEvent=(e)=>{
        if(e.key==='Enter'){
-//           router.reload();
-           router.replace(`/search/match?movie=${text}&page=1`);
-           
-                          }
+           if(text.length===0)return 
+           let newText = text.replaceAll(/[<*>]/g,"")//this would make the users input safer preventing an injection
+        
+           router.push(`/search/match?movie=${text}&page=1`);
+        }
     }
     
     return(

@@ -1,9 +1,7 @@
 import Image from 'next/image';
-import heroPic from '../../assets/images/oct.jpg';
 import fallBackPicture from '../../assets/images/not-available.jpg';
 import styles from './MovieCard.module.css';
 import Link from 'next/link';
-//import {useRef} from 'react';
 import {useRouter} from 'next/router';
 
 function MovieCard({Title,Year, Poster,imdbID}){

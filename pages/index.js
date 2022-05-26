@@ -8,22 +8,33 @@ import {
   faStar,
     faCaretRight
 } from "@fortawesome/free-solid-svg-icons";
-import tempBlood from '../assets/images/blood.jpg'
+import avengers from '../assets/images/avengers.jpg'
 import MovieCardContainer from '../components/MovieCardContainer';
 import Loader from '../components/LoadingModal';
 import useSWR from 'swr'
 
+
+
+
 export default function Home() {
-    const [url, setUrl]=useState('/api/movies/all?movie=cat&page=1')
+    const [url, setUrl]=useState(`/api/movies/all?movie=${pickRandomTopic()}&page=1`)//this gets the data for the movies in the "some movies" area 
     const router=useRouter();
-    const { data, error } = useSWR(`/api/movie/tt4154796`);
+    const { data, error } = useSWR(`/api/movie/tt4154796`);//this gets the data for the hero section
     
     if(!data)return <Loader />
     
     const {Poster, Title, Plot,imdbID,imdbRating}=data;
     
+    //this takes the user to the page that shows the details of a single movie
     const switchToSingleMovie=(e)=>{
         router.push(`/movies/${imdbID}`)
+    }
+    
+    //this picks a random topic that would be passed to the query string to show different movies when the user gets to the home page
+    function pickRandomTopic(){
+        const words=['cash', 'grace', 'peace', 'dare', 'hell', 'angels', 'love', 'bet','cat'];
+        const randomWord=words[Math.floor(Math.random()*words.length)];
+        return randomWord;
     }
     
   return (
@@ -31,7 +42,7 @@ export default function Home() {
       
       
       <div  className={styles.imageContainer}>
-        <Image className={styles.theImage}   src={Poster} alt="a picture for the movie" layout="fill"/>
+        <Image className={styles.theImage}   src={avengers} alt="a picture for the movie" layout="fill"/>
       </div>
       
       <section  className={styles.heroCover}>

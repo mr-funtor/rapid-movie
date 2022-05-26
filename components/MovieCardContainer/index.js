@@ -1,3 +1,4 @@
+import {useState,useEffect} from 'react';
 import Link from 'next/link';
 import styles from './MovieCardContainer.module.css';
 import MovieCard from '../MovieCard';
@@ -10,10 +11,7 @@ function MovieCardContainer({url}){
     if(!data)return <Loader />
     
     const {Search}=data || [];
-//    console.log(Search)
-//    return <p>ddd</p>
-//    console.log(Search[0].Poster)
-    
+  
     return(
     <section className={styles.cardsContainer}>
      {

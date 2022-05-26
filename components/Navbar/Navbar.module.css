@@ -17,13 +17,13 @@
 .navbar>i,
 .navbar p{
     cursor: pointer;
-    
+    font-size: 18px;
 }
 
 .navbar>input{
-    background: rgba(0,0,0,0.5);
-    width: 600px;
-    min-width: 180px;
+    background: rgba(0,0,0,0.6);
+    width: 40vw;
+/*    min-width: 90px;*/
     height: 30px;
     border: 1px solid white;
     border-radius: 10px;
@@ -31,10 +31,9 @@
     color:#fff;
 }
 
-/*
-.navbar>div{
-    width:50%;
-    display: flex;
-    justify-content: flex-start;
+
+@media(max-width:550px){
+     .navbar>input{
+        width: 180px;
+    }
 }
-*/

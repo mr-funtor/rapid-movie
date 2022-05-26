@@ -1,7 +1,6 @@
 import {useState,useEffect} from 'react'
 import {useRouter} from 'next/router';
 import Image from 'next/image';
-import tempBlood from '../../assets/images/blood.jpg';
 import styles from '../../styles/SingleMovie.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

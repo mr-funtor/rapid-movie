@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 import {useRouter} from 'next/router';
-import styles from '../../styles/SingleMovie.module.css';
+import styles from '../../styles/AllMovies.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar
@@ -11,14 +11,13 @@ import MovieCardContainer from '../../components/MovieCardContainer'
 
 function SingleEntry(){
     const router=useRouter();
-    const movieCode= router.query.movie;
-//    console.log('inside entries', movieCode,router.query)
+    const {movie}= router.query;
     const [url, setUrl]=useState()
 
-    //renders the page when the user searches on the navbar
+    //re-renders the page when the user searches on the navbar
  useEffect(()=>{
-     setUrl(`/api/movies/match?movie=${movieCode}&page=1`)
- },[movieCode])
+     setUrl(`/api/movies/match?movie=${movie}&page=1`)
+ },[movie])
     
     return(
         <section className={styles.pageContainer}>
