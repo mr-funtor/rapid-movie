@@ -118,3 +118,12 @@
     justify-content: space-between
 }
 
+@media(max-width:780px){
+    .movieBody{
+        padding: 5vh 10vw;
+    }
+    .movieBodyTop>h1{
+        font-size: 30px;
+    }
+}
+
