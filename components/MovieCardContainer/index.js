@@ -10,6 +10,8 @@ function MovieCardContainer({url}){
     if(!data)return <Loader />
     
     const {Search}=data || [];
+//    console.log(Search)
+//    return <p>ddd</p>
 //    console.log(Search[0].Poster)
     
     return(

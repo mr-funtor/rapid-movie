@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import heroPic from '../../assets/images/oct.jpg';
+import fallBackPicture from '../../assets/images/not-available.jpg';
 import styles from './MovieCard.module.css';
 import Link from 'next/link';
 //import {useRef} from 'react';
@@ -10,14 +11,14 @@ function MovieCard({Title,Year, Poster,imdbID}){
     
     //This takes the user to the page/route for the single movie
     const switchToSingleMovie=(e)=>{
-        router.push(`/all-movies/${imdbID}`)
+        router.push(`/movies/${imdbID}`)
     }
     
     
     return(
         <article  className={styles.singleCard} onClick={(e)=>switchToSingleMovie(e)}>
             <div className={styles.imageContainer}>
-                <Image className={styles.theImage} src={Poster}
+                <Image className={styles.theImage} src={Poster==="N/A"?fallBackPicture: Poster}
         alt="a picture for the movie" layout="fill"/>
             </div>
        

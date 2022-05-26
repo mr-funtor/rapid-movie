@@ -23,7 +23,7 @@ export default function Home() {
     const {Poster, Title, Plot,imdbID,imdbRating}=data;
     
     const switchToSingleMovie=(e)=>{
-        router.push(`/all-movies/${imdbID}`)
+        router.push(`/movies/${imdbID}`)
     }
     
   return (
