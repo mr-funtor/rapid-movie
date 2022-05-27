@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## App Overview
+This a movie searching and data site. 
+You search for a movie using the search box.The closest movies are displayed. You click on a movie and the details of the movie is displayed.
+
 
 ## Getting Started
+Follow this [link](https://www.google.com/url?q=https%3A%2F%2Frapidapi.com%2Frapidapi%2Fapi%2Fmovie-database-alternative%2F&sa=D&sntz=1&usg=AOvVaw3wBNHp7RHGM9TP2qeMi1Io) and obtain an API key. Make sure you subscribe to the API.
+Test that the connection is working on the site.
+After subsribing, clone this repository.
+In your local machine, and in the root folder of the repository, create a **.env.local** file
+In the .env.local file, type in your API key like this:
+![an example of how to write the API Key](/assets/images/Screenshot.png)
 
-First, run the development server:
+**Please note the app will malfunction without the API key.**
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Next Steps
+In the root folder run the following command in your terminal to install dependencies:
+**npm install**
+
+Now run the development server using:
+**npm run dev**
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Technologies used
+This app was created using:
+-Next JS for the layout
+-SWR for data fetching
+-Vanilla CSS
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Why Next JS?
+Next JS was used to due to the ease of routing.
+It was also used because of its' backend capability which was used in the application.
+The server side was used to protect the API key.
 
-## Learn More
+## Why SWR?
+Easier to get data with a fewer lines of coding compared to using plain fetch.
+The data caching abilities of SWR
 
-To learn more about Next.js, take a look at the following resources:
+## Why Vanilla CSS?
+Using a framework would unnessarily bloat the application. The simpler the better.
+Certain details of the app would not be annoying to achieve with a CSS framework.
+Wanted to display my proper understanding of CSS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
