@@ -4,10 +4,10 @@ You search for a movie using the search box.The closest movies are displayed. Yo
 
 
 ## Getting Started
-Follow this [link](https://www.google.com/url?q=https%3A%2F%2Frapidapi.com%2Frapidapi%2Fapi%2Fmovie-database-alternative%2F&sa=D&sntz=1&usg=AOvVaw3wBNHp7RHGM9TP2qeMi1Io) and obtain an API key. Make sure you subscribe to the API.
-Test that the connection is working on the site.
-After subsribing, clone this repository.
-In your local machine, and in the root folder of the repository, create a **.env.local** file
+Follow this [link](https://www.google.com/url?q=https%3A%2F%2Frapidapi.com%2Frapidapi%2Fapi%2Fmovie-database-alternative%2F&sa=D&sntz=1&usg=AOvVaw3wBNHp7RHGM9TP2qeMi1Io) and obtain an API key. Make sure you subscribe to the API.<br>
+Test that the connection is working on the site.<br>
+After subscribing, clone this repository.<br>
+In your local machine, and in the root folder of the repository, create a **.env.local** file.<br>
 In the .env.local file, type in your API key like this:<br>
 ![an example of how to write the API Key](/assets/images/Screenshot.png)
 
