@@ -39,7 +39,7 @@ This app was created using:<br>
 * The data caching abilities of SWR
 
 ## Why Vanilla CSS?
-* Using a framework would unnessarily bloat the application. The simpler the better.
+* Using a framework would unnecessarily bloat the application. The simpler the better.
 * Certain details of the app would not be annoying to achieve with a CSS framework.
 * Wanted to display my proper understanding of CSS.
 
@@ -52,7 +52,7 @@ There are 4 pages in this application:
 <br>
 The major constraint for this app was the API key. This is sensitive and should not show on the client side<br>
 <br>To ensure protection, the API key was stored in an environmental variable and then passed to the server.
-<br>
+<br><br>
 This means that a request for a movie is first sent to the app's server. The server then sends a request to the database.
 After fetching the data, it is sent to the client. The app's server is a middle man.
 
