@@ -43,6 +43,18 @@ This app was created using:<br>
 * Certain details of the app would not be annoying to achieve with a CSS framework.
 * Wanted to display my proper understanding of CSS.
 
+## Process Flow
+There are 4 pages in this application:
+* Home age.
+* The page to display all the movies.
+* The page to display a specific movie.
+* A page to display movies that match a search by the user.
+<br>
+The major constraint for this app was the API key. This is sensitive and should not show on the client side<br>
+<br>To ensure protection, the API key was stored in an environmental variable and then passed to the server.
+<br>
+This means that a request for a movie is first sent to the app's server. The server then sends a request to the database.
+After fetching the data, it is sent to the client. The app's server is a middle man.
 
 
 
